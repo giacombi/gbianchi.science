@@ -10,31 +10,37 @@ weight = 5
 # List your academic interests.
 [interests]
   interests = [
-    "Artificial Intelligence",
-    "Computational Linguistics",
-    "Information Retrieval"
+    "Minimally Invasive Cardiac Surgery",
+    "Mechanical Assit Devices",
+    "ECMO",
+    "Data Science",
+    "R",
+    "Python"
   ]
 
 # List your qualifications (such as academic degrees).
 [[education.courses]]
-  course = "PhD in Artificial Intelligence"
-  institution = "Stanford University"
-  year = 2012
+  course = "PhD in Innovative Strategies in Biomedical Research"
+  institution = "Scuola Superiore Sant'Anna - Pisa - ITALY"
+  year = 2013
 
 [[education.courses]]
-  course = "MEng in Artificial Intelligence"
+  course = "Specialist in Cardiac Surgery"
   institution = "Massachusetts Institute of Technology"
   year = 2009
 
 [[education.courses]]
-  course = "BSc in Artificial Intelligence"
-  institution = "Massachusetts Institute of Technology"
-  year = 2008
+  course = "Fellow of Artificial Organs Lab"
+  institution = "University of Maryland - Baltimore - Maryland - USA"
+  year = 2009
+ 
+ [[education.courses]]
+  course = "Medical Degree"
+  institution = "University of Florence - Florence - ITALY"
+  year = 2009
  
 +++
 
 # Biography
 
-Lena Smith is a professor of artificial intelligence at the Stanford AI Lab. Her research interests include distributed robotics, mobile computing and programmable matter. She leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate. 
+Giacomo Bianchi is staff cardiac surgeon at "Ospedale del Cuore" in Massa, Italy
