@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Contents on Giacomo Bianchi Data Doctor Blog</title>
+    <link>/content/</link>
+    <description>Recent content in Contents on Giacomo Bianchi Data Doctor Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Sat, 28 Jul 2018 15:38:37 +0200</lastBuildDate>
+    
+	<atom:link href="/content/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mio</title>
+      <link>/content/talk/mio/</link>
+      <pubDate>Sat, 28 Jul 2018 15:38:37 +0200</pubDate>
+      
+      <guid>/content/talk/mio/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
