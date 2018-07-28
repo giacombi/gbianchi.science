@@ -16,7 +16,7 @@ url_video = ""
 
 # Optional featured image (relative to `static/img/` folder).
 [header]
-image = "DD_menarini.png"
-caption = "Diastole Diseased - Surgical treatment"
+image = ""
+caption = ""
 
 +++
