@@ -15,7 +15,9 @@ weight = 60
 
 +++
 
-Teaching activity at [Scuola Superiore Sant'Anna](www.sssup.it) - Pisa - ITALY:
+Teaching activity at :
+
+[Scuola Superiore Sant'Anna](www.sssup.it) - Pisa - ITALY:
 
 - **Mitral Valve Surgery** in 
     "[*INNOVATION IN CARDIAC SURGERY: ADVANCES IN MINIMALLY INVASIVE THERAPEUTICS*](https://www.santannapisa.it/it/formazione/master-innovation-cardiac-surgery-advances-minimally-invasive-therapeutics)" - 2nd level Master
