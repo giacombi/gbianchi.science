@@ -23,7 +23,7 @@ url = "doi: 10.1111/jocs.12841"
 
 # Optional featured image (relative to `static/img/` folder).
 [header]
-image = "operating_outside_box.png"
+image = ""
 caption = "Distribution of EuroSCORE II among Minimally Invasive Mitral Valve patients"
 
 +++

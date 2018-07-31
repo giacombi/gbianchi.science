@@ -22,7 +22,7 @@ url = "doi: 10.1111/jocs.12841"
 
 # Optional featured image (relative to `static/img/` folder).
 [header]
-image = "colorectal_k_review.png"
+image = ""
 caption = "Minimally invasive surgical setup (A) and appearance of the metastatic tumor (B)"
 
 +++

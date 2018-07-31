@@ -22,7 +22,7 @@ url = "doi: 10.1111/jocs.12841"
 
 # Optional featured image (relative to `static/img/` folder).
 [header]
-image = "giant_sol_tum.png"
+image = ""
 caption = "Vascularization from the circumflex artery (C) and gross features of excised mass (D)"
 
 +++

@@ -22,7 +22,7 @@ url = "doi: 10.1111/jocs.12151"
 
 # Optional featured image (relative to `static/img/` folder).
 [header]
-image = "tric_augment.png"
+image = ""
 caption = "(A) Anterior leaflet detachment and suspension. (B) Complete augmentation with autologous pericardial patch."
 
 +++

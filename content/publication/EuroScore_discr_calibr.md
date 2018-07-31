@@ -22,7 +22,7 @@ url = "doi: 10.1097/IMI.0000000000000377"
 
 # Optional featured image (relative to `static/img/` folder).
 [header]
-image = "euro_discrim.png"
+image = ""
 caption = "calibration plot for EuroSCORE (A) and EuroSCORE II (B)"
 
 +++
