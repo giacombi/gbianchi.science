@@ -15,14 +15,7 @@ weight = 60
 
 +++
 
-This is an example of using the *custom* widget to create your own homepage section.
+Teching activity at [Scuola Superiore Sant'Anna](www.sssup.it) - Pisa - ITALY:
 
-I am a teaching instructor for the following courses at University X:
-
-- CS101: An intro to computer science
-- CS102: An intro to computer science
-- CS103: An intro to computer science
-- CS104: An intro to computer science
-- CS105: An intro to computer science
-- CS106: An intro to computer science
-- CS107: An intro to computer science
+- **Mitral Valve Surgery** in 
+    "[*INNOVATION IN CARDIAC SURGERY: ADVANCES IN MINIMALLY INVASIVE THERAPEUTICS*](https://www.santannapisa.it/it/formazione/master-innovation-cardiac-surgery-advances-minimally-invasive-therapeutics)" - 2nd level Master
