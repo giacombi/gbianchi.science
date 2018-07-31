@@ -3,10 +3,20 @@ title: a try
 author: Giacomo
 date: '2018-07-31'
 slug: a-try
-categories: []
+categories: [R]
 tags: []
 header:
   caption: ''
   image: ''
+output:
+    html_document:
+        theme: cosmo
 ---
+
+# This is a sample post.
+
+```{r}
+a <- rnorm(100,1,1)
+plot(a)
+```
 
