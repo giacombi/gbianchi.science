@@ -1,0 +1,12 @@
+---
+title: a try
+author: Giacomo
+date: '2018-07-31'
+slug: a-try
+categories: []
+tags: []
+header:
+  caption: ''
+  image: ''
+---
+
