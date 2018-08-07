@@ -11,16 +11,17 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>a try</title>
-      <link>/post/a-try/</link>
-      <pubDate>Tue, 31 Jul 2018 00:00:00 +0000</pubDate>
+      <title>Working with R</title>
+      <link>/post/r-at-work/</link>
+      <pubDate>Tue, 07 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/a-try/</guid>
-      <description>&lt;div id=&#34;this-is-a-sample-post.&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;This is a sample post.&lt;/h1&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;a &amp;lt;- rnorm(100,1,1)
-plot(a)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2018-07-31-a-try_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+      <guid>/post/r-at-work/</guid>
+      <description>&lt;div id=&#34;research-and-writing-with-r&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Research and Writing with R&lt;/h1&gt;
+&lt;div id=&#34;introduction&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;My R journey starts long time ago, when I decided to embrace a more serious way to do research and statistical analysis, as well as reporting.&lt;/p&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 </description>
     </item>
