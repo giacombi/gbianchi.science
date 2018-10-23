@@ -1,0 +1,17 @@
+---
+title: EACTS Twitter Analysis
+author: Giacomo Bianchi
+date: '2018-10-23'
+slug: eacts-twitter-analysis
+categories:
+  - R
+  - Data Analysis
+  - Cardiology
+  - EACTS2018
+tags: []
+header:
+  caption: ''
+  image: ''
+---
+
+This is an analysis of tweets during the 32md EACTS Congress held in Milan.
