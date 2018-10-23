@@ -39,6 +39,7 @@ The original dataset has been released for teaching purpose by the [National Hea
 ```{r Load libraries for data analysis, message=FALSE, warning=FALSE, echo=FALSE}
 library(tidyverse)
 library(lubridate)
+library(compareGroups)
 ```
 
 ##Read the dataset 
@@ -54,7 +55,10 @@ The data are stored as "comma-separated-values" where the actual separator is, i
 Now it can be read and stored using the appropriate function from the "tidyverse" package `read_csv()`.
 
 ```{r Read the dataset into a dataframe}
-dig <- read_csv(file = "data/dig.csv")
+dig <- read_csv(file = "data/dig.csv",
+                col_types = list(SEX = col_factor(levels = c("1", "2")),
+                                 RACE = col_factor(levels = c("1", "2"))
+                                 ))
 ```
 
 ##Dataset structure
@@ -62,6 +66,103 @@ Now is time to explore the structure of the dataframe with the appropriate funct
 
 ```{r Explore dig tibble}
 glimpse(dig)
+```
+
+The DIG trial was designed as a randomized, double-blind, multicenter trial with more than 300 centers. 
+
+First we can explore the distribution of data in some common variables.
+
+```{r message=FALSE, warning=FALSE}
+#histograms by groups
+histgg <- function(df, x, grp){
+    x <- enquo(x) # the data
+    grp <- enquo(grp) #the actual group
+    ggplot(aes(!!x), data = df) +
+        geom_histogram() +
+        labs(x = "Value", y = "Count") +
+        facet_grid(cols = vars(!!grp), scales = "free") +
+        theme_bw()
+}
+
+expl <- dig %>% select(AGE, EJF_PER, CHFDUR) %>%
+                mutate(ID = 1:nrow(dig)) %>%
+                rename(`EF(%)` = EJF_PER, `CHF duration (months)` = CHFDUR) %>% 
+                gather(key = Variable, value = Measure, -ID)
+        
+
+histgg(df = expl, x = Measure, grp = Variable)
+```
+
+From this facet plot is possible to infer about the distribution of data. While AGE and EF(%) are almost normally distributed, the CHF duration is right-skewed. Clinically this value can be explained by the disease itself, beared by high mortality: most patients are enrolled within few months from the first episode of decompensation, while a little proportion has chronic heart failure with some acute phase.
+In this case AGE and EF can be described by mean and standard deviation. A more robust measure of central tendency is required for the CHF duration parameter, such as the median. 
+In Table 1 of the paper, the authors expressed these variables accordingly. As in summary tables, the authors operated a breakdown into the two groups, Digoxin and Placebo.
+
+We can replicate the previous part using a different tools in R language.
+
+The first is to calculate mean, sd and summarise for each group; another tool is to use a function of the `apply` family, i.e. `tapply()`; we can use tools from `tidyverse` such as `groupby()` and `summarize()`; finally a specific package `compareGroups()` that produces an output very close to publish-ready format we are use to in biomedical journals. 
+
+```{r Summary statistics old way}
+#digoxin mean and sd
+mean(dig$AGE[dig$TRTMT == 1], na.rm = TRUE)
+sd(dig$AGE[dig$TRTMT == 1], na.rm = TRUE)
+
+
+#placebo mean and sd
+mean(dig$AGE[dig$TRTMT == 0], na.rm = TRUE)
+sd(dig$AGE[dig$TRTMT == 0], na.rm = TRUE)
+```
+
+```{r Summary Statistics using tapply}
+tapply(dig$AGE, dig$TRTMT, function(x) c(mean(x), sd(x)))
+```
+
+```{r Summary Statistics using Tidyverse}
+dig %>% 
+    select(AGE, TRTMT) %>% 
+    mutate(TRTMT = factor(TRTMT)) %>% 
+    mutate(TRTMT = fct_recode(TRTMT, digoxin = "1", placebo = "0")) %>% 
+    group_by(TRTMT) %>% 
+    summarise(mean = mean(AGE), sd = sd(AGE)) 
+```
+
+```{r Descriptive Statistics using compareGroups}
+summ_stat <- dig %>% 
+                select(AGE, EJF_PER, CHFDUR, TRTMT)
+summ_stat_com <- compareGroups(TRTMT~AGE+EJF_PER+CHFDUR, data = summ_stat)
+compareGroups::createTable(summ_stat_com)
+```
+
+```{r Descriptive statistics using your own function}
+mean_sd <- function(x, r)  {
+    x <- as.numeric(x)
+    r <- as.numeric(r) #insert the number for rounding
+    m <- round(mean(x, na.rm = T),r) #calculate the mean
+    s <- round(sd(x, na.rm = T),r) #calculate the SD
+    result <- paste(m, s, sep="±") #create a character vector to be printed
+    return(result) #print the string
+}
+
+#use tapply to 
+tapply(dig$AGE, dig$TRTMT, function(x) mean_sd(x, r = 2))
+tapply(dig$EJF_PER, dig$TRTMT, function(x) mean_sd(x, r = 2))
+tapply(dig$CHFDUR, dig$TRTMT, function(x) median(x, na.rm = TRUE))
+
+```
+
+Some are pretty, some others are pretty ugly as output. Anyway they confirm the reproducibility of the data written in the paper.
+
+In the second part of Table 1 are listed all the categorical variables and expressed as percentage of patients. To reproduce it, we need to modify the existing variables and levels.
+
+In this case, the Tidyverse function makes the life really easy.
+```{r Recoding factors}
+dig_cat <- dig %>% 
+                select(SEX, RACE, AGE, EJFMETH, CHESTX, FUNCTCLS, NSYM, PREVMI, ANGINA,
+                       DIABETES, HYPERTEN, DIGUSE, CHFETIOL, DIURET, DIURETK, ACEINHIB,
+                       NITRATES, HYDRAL, VASOD, DIGDOSER)
+
+dig_cat <- dig_cat %>% 
+                mutate(SEX = fct_recode(SEX,
+                                        "Male" = "1", "Female" = "2"))
 ```
 
 

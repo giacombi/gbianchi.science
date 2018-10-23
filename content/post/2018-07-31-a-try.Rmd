@@ -2,6 +2,7 @@
 title: Working with R
 author: Giacomo Bianchi MD PhD
 date: '2018-08-07'
+type: 'post'
 slug: R-at-work
 categories: [R]
 tags: []
