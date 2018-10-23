@@ -2,32 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>R on Giacomo Bianchi Data Doctor Blog</title>
-    <link>/categories/r/</link>
+    <link>https://drgbianchi.netlify.com/categories/r/</link>
     <description>Recent content in R on Giacomo Bianchi Data Doctor Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
     <lastBuildDate>Tue, 07 Aug 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/categories/r/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://drgbianchi.netlify.com/categories/r/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Working with R</title>
-      <link>/post/r-at-work/</link>
+      <link>https://drgbianchi.netlify.com/post/r-at-work/</link>
       <pubDate>Tue, 07 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/r-at-work/</guid>
+      <guid>https://drgbianchi.netlify.com/post/r-at-work/</guid>
       <description>Research and Writing with R Introduction My R journey starts long time ago, when I decided to embrace a more serious way to do research and statistical analysis, as well as reporting.
   </description>
     </item>
     
     <item>
       <title>The effect of digoxin on mortality and morbidity in patients with heart failure: a case of reproducible research</title>
-      <link>/post/digoxin-nejm/</link>
+      <link>https://drgbianchi.netlify.com/post/digoxin-nejm/</link>
       <pubDate>Sat, 30 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/digoxin-nejm/</guid>
+      <guid>https://drgbianchi.netlify.com/post/digoxin-nejm/</guid>
       <description>Philosophy  Statistics: the only science that enables different experts using the same figures to draw different conclusion Evan Esar
   The only statistics you can trust are those you falsified yourself. Winston Churchill
   Introduction and aim of the analysis The aim of this analysis is to reproduce the landmark paper published by The Digitalis Investigation Group in 1997 in the New England Journal of Medicine1. The original dataset has been released for teaching purpose by the National Heart Lung and Blood Institute.</description>

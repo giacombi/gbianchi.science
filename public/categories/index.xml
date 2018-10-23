@@ -2,40 +2,40 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Giacomo Bianchi Data Doctor Blog</title>
-    <link>/categories/</link>
+    <link>https://drgbianchi.netlify.com/categories/</link>
     <description>Recent content in Categories on Giacomo Bianchi Data Doctor Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
     <lastBuildDate>Sat, 30 Dec 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://drgbianchi.netlify.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Cardiology</title>
-      <link>/categories/cardiology/</link>
+      <link>https://drgbianchi.netlify.com/categories/cardiology/</link>
       <pubDate>Sat, 30 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>/categories/cardiology/</guid>
+      <guid>https://drgbianchi.netlify.com/categories/cardiology/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Data Analysis</title>
-      <link>/categories/data-analysis/</link>
+      <link>https://drgbianchi.netlify.com/categories/data-analysis/</link>
       <pubDate>Sat, 30 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>/categories/data-analysis/</guid>
+      <guid>https://drgbianchi.netlify.com/categories/data-analysis/</guid>
       <description></description>
     </item>
     
     <item>
       <title>R</title>
-      <link>/categories/r/</link>
+      <link>https://drgbianchi.netlify.com/categories/r/</link>
       <pubDate>Tue, 07 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>/categories/r/</guid>
+      <guid>https://drgbianchi.netlify.com/categories/r/</guid>
       <description></description>
     </item>
     

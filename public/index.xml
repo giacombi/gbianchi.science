@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Giacomo Bianchi Data Doctor Blog on Giacomo Bianchi Data Doctor Blog</title>
-    <link>/</link>
+    <link>https://drgbianchi.netlify.com/</link>
     <description>Recent content in Giacomo Bianchi Data Doctor Blog on Giacomo Bianchi Data Doctor Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,10 +12,10 @@
     
     <item>
       <title>Working with R</title>
-      <link>/post/r-at-work/</link>
+      <link>https://drgbianchi.netlify.com/post/r-at-work/</link>
       <pubDate>Tue, 07 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/r-at-work/</guid>
+      <guid>https://drgbianchi.netlify.com/post/r-at-work/</guid>
       <description>&lt;div id=&#34;research-and-writing-with-r&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;Research and Writing with R&lt;/h1&gt;
 &lt;div id=&#34;introduction&#34; class=&#34;section level2&#34;&gt;
@@ -28,20 +28,20 @@
     
     <item>
       <title>Privacy Policy</title>
-      <link>/privacy/</link>
+      <link>https://drgbianchi.netlify.com/privacy/</link>
       <pubDate>Thu, 28 Jun 2018 00:00:00 +0200</pubDate>
       
-      <guid>/privacy/</guid>
+      <guid>https://drgbianchi.netlify.com/privacy/</guid>
       <description>&lt;p&gt;&amp;hellip;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>The effect of digoxin on mortality and morbidity in patients with heart failure: a case of reproducible research</title>
-      <link>/post/digoxin-nejm/</link>
+      <link>https://drgbianchi.netlify.com/post/digoxin-nejm/</link>
       <pubDate>Sat, 30 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/digoxin-nejm/</guid>
+      <guid>https://drgbianchi.netlify.com/post/digoxin-nejm/</guid>
       <description>&lt;div id=&#34;philosophy&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;Philosophy&lt;/h1&gt;
 &lt;blockquote&gt;
@@ -65,18 +65,10 @@ cat dig.csv | head -n 2&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## ID,TRTMT,AGE,RACE,SEX,EJF_PER,EJFMETH,CHESTX,BMI,KLEVEL,CREAT,DIGDOSER,CHFDUR,RALES,ELEVJVP,PEDEMA,RESTDYS,EXERTDYS,ACTLIMIT,S3,PULCONG,NSYM,HEARTRTE,DIABP,SYSBP,FUNCTCLS,CHFETIOL,PREVMI,ANGINA,DIABETES,HYPERTEN,DIGUSE,DIURETK,DIURET,KSUPP,ACEINHIB,NITRATES,HYDRAL,VASOD,DIGDOSE,CVD,CVDDAYS,WHF,WHFDAYS,DIG,DIGDAYS,MI,MIDAYS,UANG,UANGDAYS,STRK,STRKDAYS,SVA,SVADAYS,VENA,VENADAYS,CREV,CREVDAYS,OCVD,OCVDDAYS,RINF,RINFDAYS,OTH,OTHDAYS,HOSP,HOSPDAYS,NHOSP,DEATH,DEATHDAY,REASON,DWHF,DWHFDAYS
 ## 1,0,66,1,1,40,2,0.5,20.073,,1.261,0.25,96,0,0,0,0,1,1,0,2,3,96,80,126,1,1,0,1,1,0,1,0,1,1,1,0,1,0,0.25,1,1049,1,1379,0,1438,0,1438,0,1438,0,1438,0,1438,0,1438,0,1438,1,1049,0,1438,1,533,1,533,6,0,1438,,1,1379&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The data are stored as “comma-separated-values” where the actual separator is, in fact, the “comma”. It’s a “tidy” dataset, where each row represent an patient and each column a variable. Now it can be read and stored using the appropriate function from the “tidyverse” package &lt;code&gt;read_csv()&lt;/code&gt;.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;dig &amp;lt;- read_csv(file = &amp;quot;data/dig.csv&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Parsed with column specification:
-## cols(
-##   .default = col_integer(),
-##   CHESTX = col_double(),
-##   BMI = col_double(),
-##   KLEVEL = col_double(),
-##   CREAT = col_double(),
-##   DIGDOSER = col_double(),
-##   DIGDOSE = col_double()
-## )&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## See spec(...) for full column specifications.&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;dig &amp;lt;- read_csv(file = &amp;quot;data/dig.csv&amp;quot;,
+                col_types = list(SEX = col_factor(levels = c(&amp;quot;1&amp;quot;, &amp;quot;2&amp;quot;)),
+                                 RACE = col_factor(levels = c(&amp;quot;1&amp;quot;, &amp;quot;2&amp;quot;))
+                                 ))&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div id=&#34;dataset-structure&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Dataset structure&lt;/h2&gt;
@@ -87,8 +79,8 @@ cat dig.csv | head -n 2&lt;/code&gt;&lt;/pre&gt;
 ## $ ID       &amp;lt;int&amp;gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16...
 ## $ TRTMT    &amp;lt;int&amp;gt; 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0,...
 ## $ AGE      &amp;lt;int&amp;gt; 66, 77, 72, 57, 74, 69, 64, 60, 74, 64, 61, 56, 66, 4...
-## $ RACE     &amp;lt;int&amp;gt; 1, 1, 1, 1, 1, 2, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 2, 1,...
-## $ SEX      &amp;lt;int&amp;gt; 1, 1, 2, 1, 1, 2, 2, 1, 1, 2, 2, 1, 2, 1, 1, 1, 1, 1,...
+## $ RACE     &amp;lt;fct&amp;gt; 1, 1, 1, 1, 1, 2, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 2, 1,...
+## $ SEX      &amp;lt;fct&amp;gt; 1, 1, 2, 1, 1, 2, 2, 1, 1, 2, 2, 1, 2, 1, 1, 1, 1, 1,...
 ## $ EJF_PER  &amp;lt;int&amp;gt; 40, 12, 36, 31, 15, 45, 30, 39, 33, 24, 44, 23, 42, 3...
 ## $ EJFMETH  &amp;lt;int&amp;gt; 2, 1, 1, 1, 1, 1, 1, 1, 3, 1, 3, 1, 1, 1, 1, 3, 3, 1,...
 ## $ CHESTX   &amp;lt;dbl&amp;gt; 0.50, 0.56, 0.68, 0.48, 0.53, 0.70, 0.52, 0.40, 0.49,...
@@ -156,6 +148,102 @@ cat dig.csv | head -n 2&lt;/code&gt;&lt;/pre&gt;
 ## $ REASON   &amp;lt;int&amp;gt; NA, 1, NA, NA, NA, NA, 2, NA, NA, NA, NA, 1, 1, 2, 2,...
 ## $ DWHF     &amp;lt;int&amp;gt; 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0,...
 ## $ DWHFDAYS &amp;lt;int&amp;gt; 1379, 1329, 631, 1157, 191, 1620, 903, 1369, 1747, 10...&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The DIG trial was designed as a randomized, double-blind, multicenter trial with more than 300 centers.&lt;/p&gt;
+&lt;p&gt;First we can explore the distribution of data in some common variables.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#histograms by groups
+histgg &amp;lt;- function(df, x, grp){
+    x &amp;lt;- enquo(x) # the data
+    grp &amp;lt;- enquo(grp) #the actual group
+    ggplot(aes(!!x), data = df) +
+        geom_histogram() +
+        labs(x = &amp;quot;Value&amp;quot;, y = &amp;quot;Count&amp;quot;) +
+        facet_grid(cols = vars(!!grp), scales = &amp;quot;free&amp;quot;) +
+        theme_bw()
+}
+
+expl &amp;lt;- dig %&amp;gt;% select(AGE, EJF_PER, CHFDUR) %&amp;gt;%
+                mutate(ID = 1:nrow(dig)) %&amp;gt;%
+                rename(`EF(%)` = EJF_PER, `CHF duration (months)` = CHFDUR) %&amp;gt;% 
+                gather(key = Variable, value = Measure, -ID)
+        
+
+histgg(df = expl, x = Measure, grp = Variable)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://drgbianchi.netlify.com/post/2018-07-31-digoxinNEJM_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;From this facet plot is possible to infer about the distribution of data. While AGE and EF(%) are almost normally distributed, the CHF duration is right-skewed. Clinically this value can be explained by the disease itself, beared by high mortality: most patients are enrolled within few months from the first episode of decompensation, while a little proportion has chronic heart failure with some acute phase. In this case AGE and EF can be described by mean and standard deviation. A more robust measure of central tendency is required for the CHF duration parameter, such as the median. In Table 1 of the paper, the authors expressed these variables accordingly. As in summary tables, the authors operated a breakdown into the two groups, Digoxin and Placebo.&lt;/p&gt;
+&lt;p&gt;We can replicate the previous part using a different tools in R language.&lt;/p&gt;
+&lt;p&gt;The first is to calculate mean, sd and summarise for each group; another tool is to use a function of the &lt;code&gt;apply&lt;/code&gt; family, i.e. &lt;code&gt;tapply()&lt;/code&gt;; we can use tools from &lt;code&gt;tidyverse&lt;/code&gt; such as &lt;code&gt;groupby()&lt;/code&gt; and &lt;code&gt;summarize()&lt;/code&gt;; finally a specific package &lt;code&gt;compareGroups()&lt;/code&gt; that produces an output very close to publish-ready format we are use to in biomedical journals.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#digoxin mean and sd
+mean(dig$AGE[dig$TRTMT == 1], na.rm = TRUE)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 63.4189&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;sd(dig$AGE[dig$TRTMT == 1], na.rm = TRUE)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 11.0244&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#placebo mean and sd
+mean(dig$AGE[dig$TRTMT == 0], na.rm = TRUE)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 63.54746&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;sd(dig$AGE[dig$TRTMT == 0], na.rm = TRUE)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 10.8136&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tapply(dig$AGE, dig$TRTMT, function(x) c(mean(x), sd(x)))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## $`0`
+## [1] 63.54746 10.81360
+## 
+## $`1`
+## [1] 63.4189 11.0244&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;dig %&amp;gt;% 
+    select(AGE, TRTMT) %&amp;gt;% 
+    mutate(TRTMT = factor(TRTMT)) %&amp;gt;% 
+    mutate(TRTMT = fct_recode(TRTMT, digoxin = &amp;quot;1&amp;quot;, placebo = &amp;quot;0&amp;quot;)) %&amp;gt;% 
+    group_by(TRTMT) %&amp;gt;% 
+    summarise(mean = mean(AGE), sd = sd(AGE)) &lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 2 x 3
+##   TRTMT    mean    sd
+##   &amp;lt;fct&amp;gt;   &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt;
+## 1 placebo  63.5  10.8
+## 2 digoxin  63.4  11.0&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;summ_stat &amp;lt;- dig %&amp;gt;% 
+                select(AGE, EJF_PER, CHFDUR, TRTMT)
+summ_stat_com &amp;lt;- compareGroups(TRTMT~AGE+EJF_PER+CHFDUR, data = summ_stat)
+compareGroups::createTable(summ_stat_com)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## --------Summary descriptives table by &amp;#39;TRTMT&amp;#39;---------
+## 
+## _________________________________________ 
+##              0           1      p.overall 
+##           N=3403      N=3397              
+## ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯ 
+## AGE     63.5 (10.8) 63.4 (11.0)   0.627   
+## EJF_PER 28.4 (8.85) 28.6 (8.85)   0.380   
+## CHFDUR  29.8 (36.5) 30.5 (37.2)   0.422   
+## ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;mean_sd &amp;lt;- function(x, r)  {
+    x &amp;lt;- as.numeric(x)
+    r &amp;lt;- as.numeric(r) #insert the number for rounding
+    m &amp;lt;- round(mean(x, na.rm = T),r) #calculate the mean
+    s &amp;lt;- round(sd(x, na.rm = T),r) #calculate the SD
+    result &amp;lt;- paste(m, s, sep=&amp;quot;±&amp;quot;) #create a character vector to be printed
+    return(result) #print the string
+}
+
+#use tapply to 
+tapply(dig$AGE, dig$TRTMT, function(x) mean_sd(x, r = 2))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##             0             1 
+## &amp;quot;63.55±10.81&amp;quot; &amp;quot;63.42±11.02&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tapply(dig$EJF_PER, dig$TRTMT, function(x) mean_sd(x, r = 2))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##            0            1 
+## &amp;quot;28.45±8.85&amp;quot; &amp;quot;28.63±8.85&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tapply(dig$CHFDUR, dig$TRTMT, function(x) median(x, na.rm = TRUE))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##  0  1 
+## 16 17&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Some are pretty, some others are pretty ugly as output. Anyway they confirm the reproducibility of the data written in the paper.&lt;/p&gt;
+&lt;p&gt;In the second part of Table 1 are listed all the categorical variables and expressed as percentage of patients. To reproduce it, we need to modify the existing variables and levels.&lt;/p&gt;
+&lt;p&gt;In this case, the Tidyverse function makes the life really easy.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;dig_cat &amp;lt;- dig %&amp;gt;% 
+                select(SEX, RACE, AGE, EJFMETH, CHESTX, FUNCTCLS, NSYM, PREVMI, ANGINA,
+                       DIABETES, HYPERTEN, DIGUSE, CHFETIOL, DIURET, DIURETK, ACEINHIB,
+                       NITRATES, HYDRAL, VASOD, DIGDOSER)
+
+dig_cat &amp;lt;- dig_cat %&amp;gt;% 
+                mutate(SEX = fct_recode(SEX,
+                                        &amp;quot;Male&amp;quot; = &amp;quot;1&amp;quot;, &amp;quot;Female&amp;quot; = &amp;quot;2&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div id=&#34;bibliography&#34; class=&#34;section level1 unnumbered&#34;&gt;
@@ -171,28 +259,28 @@ cat dig.csv | head -n 2&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>Reproducible Research - Example from NEJM paper</title>
-      <link>/project/digoxin/</link>
+      <link>https://drgbianchi.netlify.com/project/digoxin/</link>
       <pubDate>Fri, 21 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>/project/digoxin/</guid>
+      <guid>https://drgbianchi.netlify.com/project/digoxin/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Example Talk</title>
-      <link>/talk/dd_mithology/</link>
+      <link>https://drgbianchi.netlify.com/talk/dd_mithology/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0100</pubDate>
       
-      <guid>/talk/dd_mithology/</guid>
+      <guid>https://drgbianchi.netlify.com/talk/dd_mithology/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Deep Learning</title>
-      <link>/project/deep-learning/</link>
+      <link>https://drgbianchi.netlify.com/project/deep-learning/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0200</pubDate>
       
-      <guid>/project/deep-learning/</guid>
+      <guid>https://drgbianchi.netlify.com/project/deep-learning/</guid>
       <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
 
 &lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
@@ -207,29 +295,29 @@ cat dig.csv | head -n 2&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>External Project</title>
-      <link>/project/example-external-project/</link>
+      <link>https://drgbianchi.netlify.com/project/example-external-project/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0200</pubDate>
       
-      <guid>/project/example-external-project/</guid>
+      <guid>https://drgbianchi.netlify.com/project/example-external-project/</guid>
       <description></description>
     </item>
     
     <item>
       <title>A Person Re-Identification System For Mobile Devices</title>
-      <link>/publication/person-re-identification/</link>
+      <link>https://drgbianchi.netlify.com/publication/person-re-identification/</link>
       <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>/publication/person-re-identification/</guid>
+      <guid>https://drgbianchi.netlify.com/publication/person-re-identification/</guid>
       <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Mobile visual clothing search</title>
-      <link>/publication/clothing-search/</link>
+      <link>https://drgbianchi.netlify.com/publication/clothing-search/</link>
       <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
       
-      <guid>/publication/clothing-search/</guid>
+      <guid>https://drgbianchi.netlify.com/publication/clothing-search/</guid>
       <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
 </description>
     </item>
